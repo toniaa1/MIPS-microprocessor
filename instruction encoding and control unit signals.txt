@@ -1,0 +1,41 @@
+000_xxx_xxx_xxx_0_000->ADD
+000_xxx_xxx_xxx_0_001->SUB
+000_---_xxx_xxx_x_010->SLL   
+000_---_xxx_xxx_x_011->SRL   
+000_xxx_xxx_xxx_0_100->AND
+000_xxx_xxx_xxx_0_101->OR
+000_xxx_xxx_xxx_0_110->XOR
+000_xxx_xxx_xxx_0_111->MUL
+op  rs   rt  rd
+001_xxx_xxx_xxxxxxx->ADDI
+010_xxx_xxx_xxxxxxx->LW
+011_xxx_xxx_xxxxxxx->SW
+100_xxx_xxx_xxxxxxx->BE
+101_xxx_xxx_xxxxxxx->BL
+110_xxx_xxx_xxxxxxx->BG
+op  rs   rt  addr
+111_xxxxxxxxxxxxx->JUMP
+	addr
+001 000 001 0001010
+
+
+	REGDST	EXTOP	ALUSRC	BRANCH	JUMP	ALUOP	MEMWRITE    MEMTOREG	REGWRITE
+	_________________________________________________________________________________
+R-TYPE |  1       0	  0       0       0	  010	  0  		0         1 
+ADDI   |  0   	  1	  1       0       0	  111	  0 		1         1 
+LW     |  0	  1	  1	  0	  0	  000	  1		1	  0 	
+SW     |  0	  1	  1	  0	  0	  000	  1		x	  0 	
+BE     |  0	  1	  1	  1	  0	  100	  0		x	  0 	
+BL     |  0	  1	  1	  1	  0	  101	  0		x	  0 	
+BG     |  0	  1	  1	  1	  0	  110	  0		x	  0 	
+JUMP   |  0	  1	  x	  0	  1	  000	  		x	  0 	
+
+
+
+
+
+
+  
+
+
+
